@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-11T11:12:42.000Z</updated>
+  <updated>2017-05-25T09:26:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,166 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScriptLearn</title>
-    <link href="http://yoursite.com/2017/01/11/JavaScriptLearn/"/>
-    <id>http://yoursite.com/2017/01/11/JavaScriptLearn/</id>
-    <published>2017-01-11T07:42:10.000Z</published>
-    <updated>2017-01-11T11:12:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>##前言<br>JavaScript是一种运行在浏览器中的解释型的编程语言。</p>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##前言&lt;br&gt;JavaScript是一种运行在浏览器中的解释型的编程语言。&lt;/p&gt;
-&lt;h3 id=&quot;快速入门&quot;&gt;&lt;a href=&quot;#快速入门&quot; class=&quot;headerlink&quot; title=&quot;快速入门&quot;&gt;&lt;/a&gt;快速入门&lt;/h3&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Swift Address Operate</title>
-    <link href="http://yoursite.com/2017/01/10/Swift-Address-Operate/"/>
-    <id>http://yoursite.com/2017/01/10/Swift-Address-Operate/</id>
-    <published>2017-01-10T11:01:35.000Z</published>
-    <updated>2017-01-11T07:29:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><center>iOS9以后通讯录的操作</center></p>
-<p>##前言<br>关于iOS通讯录的开发iOS9之前使用的是AddressBook framework，iOS9之后使用的是Contacts framework，以下简单介绍这两个Framework的区别。</p>
-<h3 id="初始流程"><a href="#初始流程" class="headerlink" title="初始流程"></a>初始流程</h3><ul>
-<li>校验是否有读取通讯录的权限。</li>
-<li>没有权限、申请权限。</li>
-<li>得到权限读取通讯录信息。<a id="more"></a>
-</li>
-</ul>
-<hr>
-<h4 id="AddressBook-Framework"><a href="#AddressBook-Framework" class="headerlink" title="AddressBook Framework:"></a>AddressBook Framework:</h4><pre><code>//首先引入:AddressBook
-import AddressBook
-override func touchesBegan(_ touches: Set&lt;UITouch&gt;, with event:        UIEvent?) {
-    //具体操作
-        addressBook()
-}
-func addressBook(){
-    // 获取AddressBook对象
-    let contact = ABAddressBookCreateWithOptions(nil,     nil).takeRetainedValue()
-    ABAddressBookRequestAccessWithCompletion(contact)     { (granted, error) in
-        guard granted else {
-            print(&quot;用户拒绝授权，直接返回&quot;)
-            return
-        }
-        print(&quot;用户允许访问，访问通讯录&quot;)
-        //所有东西都在这个数组里
-        let peoples =ABAddressBookCopyArrayOfAllPeople(contact).takeRetainedValue() as NSArray
-        for people: ABRecord in peoples as [AnyObject]{
-            var firstName = &quot;&quot;
-            var lastName = &quot;&quot;
-            if let firstNameUnmanaged = ABRecordCopyValue(people, kABPersonLastNameProperty) {
-                firstName = firstNameUnmanaged.takeRetainedValue() as? String ?? &quot;&quot;
-            }
-            if let lastNameUnmanaged = ABRecordCopyValue(people, kABPersonFirstNameProperty) {
-                lastName = lastNameUnmanaged.takeRetainedValue() as? String ?? &quot;&quot;
-            }
-            let phoneNums: ABMultiValue = ABRecordCopyValue(people, kABPersonPhoneProperty).takeRetainedValue()
-            guard let phoneNumUnmanaged = ABMultiValueCopyValueAtIndex(phoneNums, 0) else {
-                continue
-            }
-            var phoneNum = phoneNumUnmanaged.takeRetainedValue() as? String ?? &quot;&quot;
-            print(phoneNum)
-            var name = &quot;&quot;
-            if firstName == &quot;&quot; {
-                name = lastName
-            }else if lastName == &quot;&quot;{
-                name = firstName
-            }
-            print(name)
-        }
-
-    }
-}
-</code></pre><h4 id="Contacts-framework"><a href="#Contacts-framework" class="headerlink" title="Contacts framework:"></a>Contacts framework:</h4><pre><code>func Contacts(){
-    let store = CNContactStore()
-    // 2.2.请求授权
-    store.requestAccess(for: .contacts, completionHandler: { (isFlag : Bool, error : Error?) in
-        if isFlag {
-            print(&quot;授权成功&quot;)
-        } else {
-            print(&quot;授权失败&quot;)
-        }
-    })
-    switch CNContactStore.authorizationStatus(for: .contacts) {
-    case .denied, .restricted:
-        print(&quot;用户拒绝或受限制直接返回&quot;)
-    case .notDetermined:
-        print(&quot;未授权，请求授权&quot;)
-
-    case .authorized:
-        print(&quot;经授权，访问通讯录&quot;)
-        self.getUserAddressList()
-    }
-}
-func  getUserAddressList(){
-    let contact = CNContactStore()
-    contact.requestAccess(for: .contacts) { (granted, error) in
-        guard granted else {
-            print(&quot;用户拒绝授权，直接返回&quot;)
-            return
-        }
-        print(&quot;用户允许访问，访问通讯录&quot;)
-        let keysToFetch = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactPhoneNumbersKey] as [Any]
-        try! contact.enumerateContacts(with: CNContactFetchRequest(keysToFetch: keysToFetch as! [CNKeyDescriptor])) {(contact, pointer) in
-            let phone = contact.phoneNumbers.first
-
-            let phoneNumber = phone!.value as CNPhoneNumber
-            var phoneString = phoneNumber.stringValue
-            var firstName = contact.familyName
-            var lastName = contact.givenName
-            print(phoneString,firstName,lastName)
-
-        }
-    }
-}
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;center&gt;iOS9以后通讯录的操作&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;##前言&lt;br&gt;关于iOS通讯录的开发iOS9之前使用的是AddressBook framework，iOS9之后使用的是Contacts framework，以下简单介绍这两个Framework的区别。&lt;/p&gt;
-&lt;h3 id=&quot;初始流程&quot;&gt;&lt;a href=&quot;#初始流程&quot; class=&quot;headerlink&quot; title=&quot;初始流程&quot;&gt;&lt;/a&gt;初始流程&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;校验是否有读取通讯录的权限。&lt;/li&gt;
-&lt;li&gt;没有权限、申请权限。&lt;/li&gt;
-&lt;li&gt;得到权限读取通讯录信息。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>why</title>
-    <link href="http://yoursite.com/2017/01/10/why/"/>
-    <id>http://yoursite.com/2017/01/10/why/</id>
-    <published>2017-01-10T06:01:43.000Z</published>
-    <updated>2017-01-10T06:02:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<center> Why write blog</center><br><center>Because lonely😁</center>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; Why write blog&lt;/center&gt;&lt;br&gt;&lt;center&gt;Because lonely😁&lt;/center&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/01/06/hello-world/"/>
-    <id>http://yoursite.com/2017/01/06/hello-world/</id>
-    <published>2017-01-06T15:11:43.000Z</published>
-    <updated>2017-01-10T05:51:37.000Z</updated>
+    <link href="http://yoursite.com/2017/05/25/HelloWorld/"/>
+    <id>http://yoursite.com/2017/05/25/HelloWorld/</id>
+    <published>2017-05-25T09:25:58.000Z</published>
+    <updated>2017-05-25T09:26:59.000Z</updated>
     
     <content type="html"><![CDATA[<center>Welcome to My Blog 😀</center>]]></content>
     
