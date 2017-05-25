@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>学点东西</title>
+  <title>学点东西-靠谱</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -35,16 +35,18 @@
   
   <entry>
     <title>why</title>
-    <link href="http://yoursite.com/2017/01/10/Why/"/>
-    <id>http://yoursite.com/2017/01/10/Why/</id>
-    <published>2017-01-10T06:01:43.000Z</published>
-    <updated>2017-05-25T09:29:17.000Z</updated>
+    <link href="http://yoursite.com/2017/05/25/Why/"/>
+    <id>http://yoursite.com/2017/05/25/Why/</id>
+    <published>2017-05-25T09:01:43.000Z</published>
+    <updated>2017-05-25T09:35:38.000Z</updated>
     
-    <content type="html"><![CDATA[<center> Why write blog</center><br><center>Because lonely😁</center>]]></content>
+    <content type="html"><![CDATA[<center> Why write blog</center><br><center>Because lonely😁</center>
+]]></content>
     
     <summary type="html">
     
       &lt;center&gt; Why write blog&lt;/center&gt;&lt;br&gt;&lt;center&gt;Because lonely😁&lt;/center&gt;
+
     
     </summary>
     
