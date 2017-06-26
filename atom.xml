@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-26T10:23:05.000Z</updated>
+  <updated>2017-06-26T10:45:42.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>恰如其分的软件架构</title>
+    <link href="http://yoursite.com/2017/06/26/%E6%81%B0%E5%A6%82%E5%85%B6%E5%88%86%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    <id>http://yoursite.com/2017/06/26/恰如其分的软件架构/</id>
+    <published>2017-06-26T10:31:52.000Z</published>
+    <updated>2017-06-26T10:45:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>读《恰如其分的软件架构》标注</p>
+<p>1、时间不存在任何银弹可以瞬间排除软件开发的艰难险阻。应该去寻觅各种武器，以便更好地分割系统、提供知识、并利用抽象来揭示问题的本质。</p>
+<p>2、不管怎样，头衔与办公室都不是设计或软件构建工作的本质所在。所有的软件开发者都应该理解他所开发的软甲架构，而不仅仅是架构师。</p>
+<p>3、做到“行于其所不得不行，止于其所不得不止”。</p>
+<p>—未完待续。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;读《恰如其分的软件架构》标注&lt;/p&gt;
+&lt;p&gt;1、时间不存在任何银弹可以瞬间排除软件开发的艰难险阻。应该去寻觅各种武器，以便更好地分割系统、提供知识、并利用抽象来揭示问题的本质。&lt;/p&gt;
+&lt;p&gt;2、不管怎样，头衔与办公室都不是设计或软件构建工作的本质所在。所有的软件开发者都应
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Swift Alamofire</title>
