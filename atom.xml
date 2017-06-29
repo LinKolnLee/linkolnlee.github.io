@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-29T03:30:56.000Z</updated>
+  <updated>2017-06-29T08:16:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Alamofire 源码解析之AFError</title>
+    <link href="http://yoursite.com/2017/06/29/Alamofire-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B9%8BAFError/"/>
+    <id>http://yoursite.com/2017/06/29/Alamofire-源码解析之AFError/</id>
+    <published>2017-06-29T04:05:26.000Z</published>
+    <updated>2017-06-29T08:16:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/Users/apple/Desktop/AFError(枚举类" alt="AFError(枚举类)">.png)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/Users/apple/Desktop/AFError(枚举类&quot; alt=&quot;AFError(枚举类)&quot;&gt;.png)&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>TCP/IP协议</title>
