@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T04:03:44.000Z</updated>
+  <updated>2017-07-05T05:51:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,25 @@
     <link href="http://yoursite.com/2017/07/05/%E8%AF%BB%E7%99%BD%E9%B9%BF%E5%8E%9F/"/>
     <id>http://yoursite.com/2017/07/05/读白鹿原/</id>
     <published>2017-07-05T04:03:44.000Z</published>
-    <updated>2017-07-05T04:03:44.000Z</updated>
+    <updated>2017-07-05T05:51:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、干好自己该干的事而决不干他不该干的事。</p>
+<p>2、好饭耐不得三顿吃，好衣架不住半月穿，好书却经得住一辈子诵读。</p>
+<p>3、人往往就这样，一个人的时候是一种样子，好多人汇聚到一起又完全变成另一种样子。</p>
+<p>4、朱先生慨然应允，取来笔墨纸砚，在院中石桌上铺开宣纸，悬腕运笔，一气呵成四个大字： 好人难活</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;1、干好自己该干的事而决不干他不该干的事。&lt;/p&gt;
+&lt;p&gt;2、好饭耐不得三顿吃，好衣架不住半月穿，好书却经得住一辈子诵读。&lt;/p&gt;
+&lt;p&gt;3、人往往就这样，一个人的时候是一种样子，好多人汇聚到一起又完全变成另一种样子。&lt;/p&gt;
+&lt;p&gt;4、朱先生慨然应允，取来笔墨纸砚，在院中
+    
     </summary>
     
+    
+      <category term="阅读笔记" scheme="http://yoursite.com/tags/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
